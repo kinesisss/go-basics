@@ -1,2 +1,5 @@
 # Ignore Go executables (binaries)
 *.exe
+
+# Ignore build folder
+/build/
