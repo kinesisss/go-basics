@@ -3,10 +3,11 @@ import "fmt"
 
 var buffer [256]byte
 
-func AddOneToEachElement(slice []byte){
+func AddOneToEachElement(slice []byte) []byte{
 	for i := range slice{
 		slice[i]++
 	}
+	return slice
 }
 
 func main(){
@@ -16,6 +17,7 @@ func main(){
 		slice[i] = byte(i)
 	}
 	fmt.Println("before", slice)
-	AddOneToEachElement(slice)
-	fmt.Println("after", slice)
+	newSlice := AddOneToEachElement(slice)
+	fmt.Println("after original variable", slice)
+	fmt.Println("after new variable", newSlice)
 }
